@@ -10,8 +10,10 @@ class SnakeLadder
     System.out.println("Single Player Starting at position "+ POS);
     int pos = 0;
     int temp;
+    int i=0;
     while(pos!=100){
                    int number =(int) Math.floor(Math.random() * (MAX - MIN))+1;
+                   i++;
                    System.out.println("The number on die is : "+number);
                    int option = (int) Math.floor(Math.random() * 3);
 		    switch(option){
@@ -33,5 +35,6 @@ class SnakeLadder
 		                }
 
                    }
+                   System.out.println("Dice was played "+i+" times.");
   }
 }
