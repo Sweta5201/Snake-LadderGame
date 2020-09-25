@@ -9,13 +9,18 @@ class SnakeLadder
   {
     System.out.println("Single Player Starting at position "+ POS);
     int pos = 0;
+    int temp;
     while(pos!=100){
                    int number =(int) Math.floor(Math.random() * (MAX - MIN))+1;
                    System.out.println("The number on die is : "+number);
                    int option = (int) Math.floor(Math.random() * 3);
 		    switch(option){
-			case LADDER: pos+=number;
-				     System.out.println("Option: LADDER "+"\n"+"The Player goes at position "+pos);
+			case LADDER:temp = pos;
+                                    pos += number;
+			            if(pos>100) {
+				               pos=temp;
+			                        }
+                                     System.out.println("Option: LADDER "+"\n"+"The Player goes at position "+pos);
 				     break;
 			case SNAKE: pos -= number;
                                     if(pos<0)
